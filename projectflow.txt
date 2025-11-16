@@ -25,6 +25,9 @@
 15. Write the exception file and test it on demo.py
 16. EDA and Feature Engg notebook added.
 
+
+
+
 ----------------------------------------------- Data Ingestion -----------------------------------------------
 17. Before we work on "Data Ingestion" component >> Declare variables within constants.__init__.py file >> 
     add code to configuration.mongo_db_connections.py file and define the func for mondodb connection >> 
@@ -45,6 +48,10 @@
     To setup the connection url on Windows, open env variable setting option and add a new variable:
     Name: MONGODB_URL, Value = <url>
     Also add "artifact" dir to .gitignore file
+
+
+
+  
 
 ---------------------------- Data Validation, Data Transformation & Model Trainer ----------------------------
 
@@ -70,8 +77,8 @@
          echo $AWS_SECRET_ACCESS_KEY
 
          >> Set env var from powershell terminal: <<
-         $env:AWS_ACCESS_KEY_ID="AWS_ACCESS_KEY_ID"
-         $env:AWS_SECRET_ACCESS_KEY="AWS_SECRET_ACCESS_KEY"
+         $env:AWS_ACCESS_KEY_ID="your_access_key_here"
+         $env:AWS_SECRET_ACCESS_KEY="your_secret_key_here"
          >> Check env var from powershell terminal: <<
          echo $env:AWS_ACCESS_KEY_ID
          echo $env:AWS_SECRET_ACCESS_KEY
@@ -80,7 +87,7 @@
       * Add code to src.configuration.aws_connection.py file (To work with AWS S3 service)
       * Ensure below info in constants.__init__.py file:
             MODEL_EVALUATION_CHANGED_THRESHOLD_SCORE: float = 0.02
-            MODEL_BUCKET_NAME = "my-model-mlopsproj"
+            MODEL_BUCKET_NAME = ""
             MODEL_PUSHER_S3_KEY = "model-registry"
       * Go to S3 service >> Create bucket >> Region: us-east-1 >> General purpose >>
         Bucket Name: "my-model-mlopsproj" >> uncheck: "Block all public access" and acknowledge >>
@@ -151,3 +158,19 @@
 
 
 mongodb+srv://ashish_deshmukh:<db_password>@cluster0.kqiqcpw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+
+
+ek component banane ke liye ye workflow rahega:
+1]constants
+2]config_entity
+3]artifact_entity
+4]component
+5]pipeline
+6]app.py/demo.py
+
+1]$env:MONGODB_URL = "mongodb+srv://ashish_deshmukh:Satara@123@cluster0.kqiqcpw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+
+2]echo $env:MONGODB_URL
+
+3]$env:AWS_ACCESS_KEY_ID="your_access_key_here"
+  $env:AWS_SECRET_ACCESS_KEY="your_secret_key_here"
